@@ -52,4 +52,17 @@ function currentWeather(city) {
 
     })
 }
+
+function UVIndexx(long,lat){
+    //lets build the url for uvindex.
+    var uvqURL="https://api.openweathermap.org/data/2.5/uvi?lat="+ lat + "&lon=" + long +  "&appid=69b49d9a8462f9c7fe09dc87b6f1c4c2"; 
+    $.ajax({
+            url:uvqURL,
+            method:"GET"
+            }).then(function(response){
+                $('#UVIndexAPI').html(response.value);
+            });
+}
+
+
 $(".searchBtn").on("click",displayWeather);
