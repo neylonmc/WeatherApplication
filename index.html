@@ -19,6 +19,76 @@
 
     <body>
 
+    <div class="header">
+    <h2>Weather App</h2>
+    </div>
+        
+    <div class ="flex-container">
+        <div class="card" style="width: 18rem;">
+        <div class="card-header">
+        Search for a City:
+        </div>
+        <div class="flexContainer">
+            <input type="text" class="form-control" id="searchTermBox" placeholder="City">
+            <button  class="searchBtn">submit</button>
+        </div>
+
+        <ul class="list-group list-group-flush" id="newList">
+            <li class="listHere"></li>    
+        </ul>
+        </div>
+            
+        <div class="card">
+            <div class="card-body">
+                <h2 class="city"> City </h2>
+                <h2 class="imageLogo"></h2>
+                <h3 class="time"></h3>
+                <div id = "weatherMain">
+                    <div class = "temperature"> Temperature: <span id='temperatureAPI'></span></div>
+                    <div class = "humidity"> Humidity: <span id='humidityAPI'></span></div>
+                    <div class = "windSpeed"> Wind Speed: <span id='windSpeedAPI'></span></div>
+                    <div class = "UVIndex"> UV Index: <span id='UVIndexAPI'></span></div>
+
+                </div>
+            </div>
+        </div>
+`
+        <div class="col-sm-12" id ="future-weather">
+            <h3>5-Day Forecast:</h3>
+             <div class="row text-light">
+                 <div class="col-sm-2  forecast" >
+                    <p id="forcastDate1"></p>
+                    <p id="weatherImg0"></p>
+                     <p>Temp:<span id="forcastTemp0"></span></p>
+                    <p>Humidity:<span id="forcastHumidity0"></span></p>
+                </div>
+        <div class="col-sm-2 forecast">
+             <p id="forcastDate2"></p>
+             <p id="weatherImg1"></p>
+             <p>Temp:<span id="forcastTemp1"></span></p>
+             <p>Humidity:<span id="forcastHumidity1"></span></p>
+        </div>
+        <div class="col-sm-2 forecast">
+            <p id="forcastDate3"></p>
+            <p id="weatherImg2"></p>
+            <p>Temp:<span id="forcastTemp2"></span></p>
+            <p>Humidity:<span id="forcastHumidity2"></span></p>
+        </div>
+        <div class="col-sm-2 forecast">
+            <p id="forcastDate4"></p>
+            <p id="weatherImg3"></p>
+            <p>Temp:<span id="forcastTemp3"></span></p>
+            <p>Humidity:<span id="forcastHumidity3"></span></p>
+        </div>
+        <div class="col-sm-2 forecast">
+            <p id="forcastDate5"></p>
+            <p id="weatherImg"></p>
+            <p>Temp:<span id="forcastTemp4"></span></p>
+            <p>Humidity:<span id="forcastHumidity4"></span></p>
+            </div>
+        </div>
+    </div>
+
     <script
     src="https://code.jquery.com/jquery-3.5.1.js"   
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="   
