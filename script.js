@@ -2,7 +2,7 @@ var APIKey          = "69b49d9a8462f9c7fe09dc87b6f1c4c2"
 let cardRow         = $(".card-row");
 var searchTerm      = $("#searchTermBox"); 
 
-
+//Find search term to be displayed and store it to local storage
 function displayWeather(event) {
     event.preventDefault();
     if (searchTerm.val().trim() !==""){
@@ -25,7 +25,7 @@ function displayWeather(event) {
         }
     }
 }
-
+//get current weather to appear in HTML
 function currentWeather(city) {
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey; 
     $.ajax({
@@ -52,7 +52,7 @@ function currentWeather(city) {
 
     })
 }
-
+//get the UV Index from the lat and long
 function UVIndexx(long,lat){
     //lets build the url for uvindex.
     var uvqURL="https://api.openweathermap.org/data/2.5/uvi?lat="+ lat + "&lon=" + long +  "&appid=69b49d9a8462f9c7fe09dc87b6f1c4c2"; 
@@ -65,4 +65,6 @@ function UVIndexx(long,lat){
 }
 
 
+
+//search button eventlistener 
 $(".searchBtn").on("click",displayWeather);
