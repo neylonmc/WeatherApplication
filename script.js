@@ -33,9 +33,13 @@ function currentWeather(city) {
         url:queryURL,
         method: "GET",
     }).then(function(weather){
+
+        const today = moment().format("MMM Do YYYY"); 
+        document.getElementById("time").innerHTML = today;
         //Display contents to HTML
         let city = document.querySelector('.city');
         city.innerText = `${weather.name}`;
+
      
         let locationIcon = document.querySelector('.imageLogo'); 
         const iconImage = weather.weather[0].icon;
@@ -89,3 +93,5 @@ function UVIndexx(long,lat){
 
 //Search button eventlistener 
 $(".searchBtn").on("click",displayWeather);
+
+
