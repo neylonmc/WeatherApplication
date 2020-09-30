@@ -15,37 +15,24 @@ function displayWeather(event) {
     .then(weather=> {
     return weather.json()
     }).then(city)
-    /*
-    if (typeof(Storage) !== "undefined") {
-        // Store
-        localStorage.setItem("list", JSON.stringify(city));
-        appendToStorage("list", JSON.stringify(city));
-    
-        // Retrieve
-        document.getElementById("newList").innerHTML = localStorage.getItem("list");
-    } else {
-        document.getElementById("newList").innerHTML = "Sorry, your browser does not support Web Storage...";
-    }
-    
-    function appendToStorage(key, value){
-        var key= ('city'); 
-        var value = $(this).siblings("#searchTermBox").val();
-        localStorage.getItem(key, value);
-    }
-   */
 
+   
   if (typeof(Storage) !== "undefined") {
     // Store
     let list = [];
+    let cityItems = document.createElement("li");
     list.push("<li>JSON.stringify(city)<li>");
     localStorage.setItem("list", JSON.stringify(city));
-  
-
+    document.getElementById("newList").appendChild(cityItems); 
     // Retrieve
     document.getElementById("newList").innerHTML = JSON.parse(localStorage.getItem("list"));
 } else {
     document.getElementById("newList").innerHTML = "Sorry, your browser does not support Web Storage...";
-}
+        }
+
+    
+
+    
     }
 };
 //Get current weather to appear in HTML
@@ -79,6 +66,7 @@ function currentWeather(city) {
         //Call UVIndex function
         UVIndexx(weather.coord.lon,weather.coord.lat);
         
+        
         //5 Day Forcast 
         var forcastQuery = "https://api.openweathermap.org/data/2.5/forecast?q=" + citySearch + "&units=imperial&appid=" + APIKey; 
             $.ajax({
@@ -89,13 +77,13 @@ function currentWeather(city) {
                 for (i=0;i<5;i++){
                     var iconcode= weather.list[((i+1)*8)-1].weather[0].icon;
                     var iconurl="https://openweathermap.org/img/wn/"+iconcode+".png";
-                    var tempK= weather.list[((i+1)*8)-1].main.temp;
+                    var tempF= Math.round(weather.list[((i+1)*8)-1].main.temp);
                     var humidity= weather.list[((i+1)*8)-1].main.humidity;
                     //Display contents to particular elements in HTML
 
                 
                     $("#forcastImage"+i).html("<img src="+iconurl+">");
-                    $("#forcastTemperature"+i).html(tempK+"°F");
+                    $("#forcastTemperature"+i).html(tempF+"°F");
                     $("#forcastHumidity"+i).html(humidity+"%");
                 }
                 //Dates for each day in 5 day forcast
@@ -129,6 +117,7 @@ function UVIndexx(long,lat){
             }).then(function(weather){
                 $('#UVIndexAPI').html(weather.value);
             });
+            
 }
    
 
