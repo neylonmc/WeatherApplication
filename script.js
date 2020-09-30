@@ -15,14 +15,37 @@ function displayWeather(event) {
     .then(weather=> {
     return weather.json()
     }).then(city)
+    /*
+    if (typeof(Storage) !== "undefined") {
+        // Store
+        localStorage.setItem("list", JSON.stringify(city));
+        appendToStorage("list", JSON.stringify(city));
     
-        
+        // Retrieve
+        document.getElementById("newList").innerHTML = localStorage.getItem("list");
+    } else {
+        document.getElementById("newList").innerHTML = "Sorry, your browser does not support Web Storage...";
+    }
+    
+    function appendToStorage(key, value){
         var key= ('city'); 
         var value = $(this).siblings("#searchTermBox").val();
-        localStorage.setItem(key, JSON.stringify(value));
-        function getValue() {
-            return localStorage.getItem(JSON.stringify(value));
-        }
+        localStorage.getItem(key, value);
+    }
+   */
+
+  if (typeof(Storage) !== "undefined") {
+    // Store
+    let list = [];
+    list.push("<li>JSON.stringify(city)<li>");
+    localStorage.setItem("list", JSON.stringify(city));
+  
+
+    // Retrieve
+    document.getElementById("newList").innerHTML = JSON.parse(localStorage.getItem("list"));
+} else {
+    document.getElementById("newList").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
     }
 };
 //Get current weather to appear in HTML
