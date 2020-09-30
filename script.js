@@ -69,11 +69,29 @@ function currentWeather(city) {
                     var tempK= weather.list[((i+1)*8)-1].main.temp;
                     var humidity= weather.list[((i+1)*8)-1].main.humidity;
                     //Display contents to particular elements in HTML
+
+                
                     $("#forcastImage"+i).html("<img src="+iconurl+">");
-                    $("#forcastTemperature"+i).html(tempK+"&#8457");
+                    $("#forcastTemperature"+i).html(tempK+"°F");
                     $("#forcastHumidity"+i).html(humidity+"%");
                 }
-                
+                //Dates for each day in 5 day forcast
+                var date = moment().add(1,'day').format("MMM Do YYYY"); 
+                document.getElementById("date0").innerHTML = date;
+
+                var dateOne = moment().add(2,'day').format("MMM Do YYYY"); 
+                document.getElementById("date1").innerHTML = dateOne;
+
+                var dateTwo = moment().add(3,'day').format("MMM Do YYYY"); 
+                document.getElementById("date2").innerHTML = dateTwo;
+
+                var dateThree = moment().add(4,'day').format("MMM Do YYYY"); 
+                document.getElementById("date3").innerHTML = dateThree;
+
+                var dateFour = moment().add(5,'day').format("MMM Do YYYY"); 
+                document.getElementById("date4").innerHTML = dateFour;
+
+
             });
 
     })

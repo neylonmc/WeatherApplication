@@ -41,8 +41,8 @@
         <div class="card">
             <div class="card-body">
                 <h2 class="city"> City </h2>
+                <h5 id="time"></h5>
                 <h2 class="imageLogo"></h2>
-                <h3 id="time"></h3>
                 <div id = "weatherMain">
                     <div class = "temperature"> Temperature: <span id='temperatureAPI'></span></div>
                     <div class = "humidity"> Humidity: <span id='humidityAPI'></span></div>
@@ -52,42 +52,49 @@
                 </div>
             </div>
         </div>
+ <div class = "container">
+    <div class="col-sm-12" id ="future-weather">
+        <h3>5-Day Forecast:</h3>
+        <div class="row text-light">
+            <div class="col-sm-2 forecast">
+                <p id="date0"></p>
+                <p id="forcast0"></p>
+                <p id="forcastImage0"></p>
+                <p>Temp:<span id="forcastTemperature0"></span></p>
+                <p>Humidity:<span id="forcastHumidity0"></span></p>
+            </div>
+            <div class="col-sm-2 forecast">
+                <p id="date1"></p>
+                <p id="forcast1"></p>
+                <p id="forcastImage1"></p>
+                <p>Temp:<span id="forcastTemperature1"></span></p>
+                <p>Humidity:<span id="forcastHumidity1"></span></p>
+            </div>
+            <div class="col-sm-2 forecast">
+                <p id="date2"></p>
+                <p id="forcast2"></p>
+                <p id="forcastImage2"></p>
+                <p>Temp:<span id="forcastTemperature2"></span></p>
+                <p>Humidity:<span id="forcastHumidity2"></span></p>
+            </div>
+            <div class="col-sm-2 forecast">
+                <p id="date3"></p>
+                <p id="forcast3"></p>
+                <p id="forcastImage3"></p>
+                <p>Temp:<span id="forcastTemperature3"></span></p>
+                <p>Humidity:<span id="forcastHumidity3"></span></p>
+            </div>
+            <div class="col-sm-2 forecast">
+                <p id="date4"></p>
+                <p id="forcast4"></p>
+                <p id="forcastImage4"></p>
+                <p>Temp: <span id="forcastTemperature4"></span></p>
+                <p>Humidity: <span id="forcastHumidity4"></span></p>
+            </div>
+          
+        </div>
+</div>
 
-<div class="col-sm-12" id ="future-weather">
-    <h3>5-Day Forecast:</h3>
-    <div class="row text-light">
-        <div class="col-sm-2 forecast">
-            <p id="forcast0"></p>
-            <p id="forcastImage0"></p>
-            <p>Temp:<span id="forcastTemperature0"></span></p>
-            <p>Humidity:<span id="forcastHumidity0"></span></p>
-        </div>
-        <div class="col-sm-2 forecast">
-            <p id="forcast1"></p>
-            <p id="forcastImage1"></p>
-            <p>Temp:<span id="forcastTemperature1"></span></p>
-            <p>Humidity:<span id="forcastHumidity1"></span></p>
-        </div>
-        <div class="col-sm-2 forecast">
-            <p id="forcast2"></p>
-            <p id="forcastImage2"></p>
-            <p>Temp:<span id="forcastTemperature2"></span></p>
-            <p>Humidity:<span id="forcastHumidity2"></span></p>
-        </div>
-        <div class="col-sm-2 forecast">
-            <p id="forcast3"></p>
-            <p id="forcastImage3"></p>
-            <p>Temp:<span id="forcastTemperature3"></span></p>
-            <p>Humidity:<span id="forcastHumidity3"></span></p>
-        </div>
-        <div class="col-sm-2 forecast">
-            <p id="forcast4"></p>
-            <p id="forcastImage4"></p>
-            <p>Temp:<span id="forcastTemperature4"></span></p>
-            <p>Humidity:<span id="forcastHumidity4"></span></p>
-        </div>
-      
-    </div>
 </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script
