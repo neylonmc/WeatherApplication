@@ -27,7 +27,7 @@ function displayWeather(event) {
 }
 //get current weather to appear in HTML
 function currentWeather(city) {
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey; 
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey; 
     $.ajax({
         url:queryURL,
         method: "GET",
