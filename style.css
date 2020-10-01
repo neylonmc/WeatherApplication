@@ -27,3 +27,15 @@ body {
 .row {
     background-color: darkslategray;
 }
+
+.low-risk{
+    background: green;
+}
+
+.medium-risk{
+    background: orange;
+}
+
+.high-risk{
+    background: red;
+}

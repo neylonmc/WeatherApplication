@@ -29,12 +29,19 @@ function displayWeather(event) {
 } else {
     document.getElementById("newList").innerHTML = "Sorry, your browser does not support Web Storage...";
         }
+    
 
     
 
     
     }
 };
+
+function createList () {
+    var listItems = $("<li>"+citySearch.toUpperCase()+"</li>");
+    $(listItems).attr("class","list-group");
+    $(".list-group").append(listItems)
+}
 //Get current weather to appear in HTML
 function currentWeather(city) {
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIKey; 
@@ -116,10 +123,26 @@ function UVIndexx(long,lat){
             method:"GET"
             }).then(function(weather){
                 $('#UVIndexAPI').html(weather.value);
+            }).then(function changeInputColor(weather){
+                var UVChange =$('#UVIndexAPI').removeClass();
+                if (UVChange <=3){
+                    $('#UVIndexAPI').addClass('low-risk');
+                }
+                else if(UVChange >= 6 && value <= 8){
+                    $('#UVIndexAPI').addClass('medium-risk');
+                }
+                else{
+                    $('#UVIndexAPI').addClass('high-risk');
+                }
             });
-            
+           
 }
+
    
+            
+
+
+
 
 //Search button eventlistener 
 $(".searchBtn").on("click",displayWeather);
